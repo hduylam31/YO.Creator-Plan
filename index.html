@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok KOL/KOC Platform — Product Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #FFC400;
+    --color-primary-dark: #D9A600;
+    --color-navy: #101827;
+    --color-blue: #233F9D;
+    --color-white: #FFFFFF;
+    --color-bg-light: #F6F7F9;
+    --color-border: #E5E7EB;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6B7280;
+    --color-muted: #9CA3AF;
+    --color-danger: #EF4444;
+    --color-success: #22C55E;
+    --font-main: "Inter", "Arial", sans-serif;
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 22px;
+    --text-2xl: 28px;
+    --text-3xl: 36px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 999px;
+    --shadow-sm: 0 2px 8px rgba(17,24,39,0.06);
+    --shadow-md: 0 4px 16px rgba(17,24,39,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--color-white);
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    line-height: 26px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--color-navy);
+    padding: var(--space-12) 0 var(--space-10);
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(255,196,0,0.15);
+    border: 1px solid rgba(255,196,0,0.35);
+    border-radius: var(--radius-pill);
+    padding: 4px 14px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-5);
+  }
+  .hero h1 {
+    font-size: var(--text-3xl);
+    line-height: 46px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--space-3);
+  }
+  .hero h1 span { color: var(--color-primary); }
+  .hero-subtitle {
+    font-size: var(--text-base);
+    line-height: 26px;
+    color: #CBD5E1;
+    max-width: 580px;
+    margin-bottom: var(--space-10);
+  }
+  .hero-stats {
+    display: flex;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat .value {
+    font-size: var(--text-2xl);
+    line-height: 38px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .hero-stat .label {
+    font-size: var(--text-xs);
+    color: #94A3B8;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-link {
+    display: block;
+    padding: 14px 16px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .nav-link:hover {
+    color: var(--color-navy);
+    border-bottom-color: var(--color-primary);
+  }
+
+  /* ─── LAYOUT ─── */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+  }
+  section {
+    padding: var(--space-12) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  section:last-of-type { border-bottom: none; }
+  section:nth-of-type(even) { background: var(--color-bg-light); }
+
+  /* ─── SECTION HEADER ─── */
+  .section-header { margin-bottom: var(--space-8); }
+  .section-tag {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-navy);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+  }
+  .section-header h2 {
+    font-size: var(--text-xl);
+    line-height: 32px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+  }
+  .section-header p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 22px;
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
+  }
+
+  /* ─── GRID ─── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: var(--text-2xl); line-height: 38px; }
+    .container, .nav-inner, .hero-inner { padding-left: var(--space-4); padding-right: var(--space-4); }
+    section { padding: var(--space-10) 0; }
+  }
+
+  /* ─── TABLE ─── */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  thead th {
+    background: var(--color-bg-light);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 11px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+  tbody tr { border-bottom: 1px solid var(--color-border); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--color-bg-light); }
+  tbody td { padding: 11px 16px; vertical-align: top; color: var(--color-text-secondary); line-height: 22px; }
+  tbody td:first-child { font-weight: 600; color: var(--color-text-primary); }
+
+  /* ─── BADGES ─── */
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-blue   { background: #EFF3FF; color: var(--color-blue); border: 1px solid #C7D2F0; }
+  .badge-yellow { background: #FFF8E1; color: #8A6200; border: 1px solid #FFE082; }
+  .badge-gray   { background: var(--color-bg-light); color: var(--color-text-secondary); border: 1px solid var(--color-border); }
+  .badge-navy   { background: var(--color-navy); color: var(--color-white); }
+  .badge-red    { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+  .badge-green  { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+  .badge-orange { background: #FFF7ED; color: #9A3412; border: 1px solid #FED7AA; }
+
+  /* ─── INFO BOXES ─── */
+  .info-box {
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
+    border-left: 4px solid var(--color-blue);
+  }
+  .info-box-yellow { border-left-color: var(--color-primary); }
+  .info-box-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-2);
+  }
+  .info-box-label-yellow { color: #8A6200; }
+  .info-box p { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 22px; }
+  .info-box strong { color: var(--color-text-primary); font-weight: 600; }
+
+  /* ─── WARN BOX ─── */
+  .warn-box {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-left: 4px solid #F59E0B;
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-sm);
+    color: #92400E;
+    margin-bottom: var(--space-6);
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    line-height: 22px;
+  }
+
+  /* ─── FLOW STEPS ─── */
+  .flow-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  @media (max-width: 768px) { .flow-row { grid-template-columns: 1fr 1fr; } }
+  .flow-step {
+    text-align: center;
+    padding: var(--space-5) var(--space-3);
+    border-right: 1px solid var(--color-border);
+  }
+  .flow-step:last-child { border-right: none; }
+  .flow-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto var(--space-3);
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+  .fd-blue   { background: #EFF3FF; color: var(--color-blue); border: 1.5px solid var(--color-blue); }
+  .fd-yellow { background: #FFF8E1; color: #8A6200; border: 1.5px solid var(--color-primary); }
+  .fd-gray   { background: var(--color-bg-light); color: var(--color-text-secondary); border: 1.5px solid var(--color-border); }
+  .flow-step .step-title { font-size: 13px; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
+  .flow-step .step-desc  { font-size: 12px; color: var(--color-muted); line-height: 18px; }
+
+  /* ─── PHASE CARDS ─── */
+  .phase-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .phase-header {
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-light);
+  }
+  .phase-num {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: var(--text-base);
+    flex-shrink: 0;
+    color: var(--color-navy);
+    background: var(--color-primary);
+  }
+  .phase-body { padding: var(--space-4) var(--space-6); }
+  .phase-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+  }
+  .phase-item:last-child { border-bottom: none; }
+  .phase-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--color-blue);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .pd-yellow { background: var(--color-primary-dark); }
+  .phase-item-title { font-weight: 600; color: var(--color-text-primary); }
+  .phase-item-desc  { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+
+  /* ─── KPI CARDS ─── */
+  .kpi-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    border-top: 3px solid var(--color-primary);
+  }
+  .kpi-target {
+    font-size: var(--text-xl);
+    line-height: 32px;
+    font-weight: 700;
+    color: var(--color-blue);
+    margin-bottom: var(--space-1);
+  }
+  .kpi-label { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-1); }
+  .kpi-sub   { font-size: var(--text-xs); color: var(--color-muted); line-height: 18px; }
+
+  /* ─── ICE BAR ─── */
+  .ice-bar-wrap { display: flex; align-items: center; gap: var(--space-2); }
+  .ice-bar { flex: 1; height: 6px; background: var(--color-bg-light); border-radius: var(--radius-pill); overflow: hidden; }
+  .ice-fill { height: 100%; border-radius: var(--radius-pill); background: var(--color-blue); }
+  .ice-fill-yellow { background: var(--color-primary-dark); }
+  .ice-score { font-size: var(--text-sm); font-weight: 700; color: var(--color-text-primary); min-width: 28px; text-align: right; }
+
+  /* ─── RISK ─── */
+  .risk-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  .risk-high { background: var(--color-danger); }
+  .risk-mid  { background: #F59E0B; }
+
+  /* ─── USER STORY ─── */
+  .story-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .story-header {
+    background: var(--color-bg-light);
+    padding: 10px var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .story-persona { font-size: 12px; font-weight: 700; color: var(--color-blue); text-transform: uppercase; letter-spacing: 0.06em; }
+  .story-body { padding: var(--space-4) var(--space-5); }
+  .story-action { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-3); line-height: 22px; }
+  .story-criteria { list-style: none; }
+  .story-criteria li {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    padding: 5px 0;
+    display: flex;
+    gap: var(--space-2);
+    align-items: flex-start;
+    border-bottom: 1px solid var(--color-border);
+    line-height: 20px;
+  }
+  .story-criteria li:last-child { border-bottom: none; }
+  .check-icon {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: #EFF3FF;
+    color: var(--color-blue);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700;
+    margin-top: 2px;
+  }
+
+  /* ─── NEXT STEPS ─── */
+  .step-row {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .step-row:last-child { border-bottom: none; }
+  .step-week {
+    flex-shrink: 0;
+    min-width: 84px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-navy);
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .step-title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-primary); margin-bottom: 3px; }
+  .step-meta  { font-size: 12px; color: var(--color-muted); }
+  .step-deliverable {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-blue);
+    min-width: 150px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ─── ENTITY GRID ─── */
+  .entity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  @media (max-width: 768px) { .entity-grid { grid-template-columns: 1fr; } }
+  .entity-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .entity-header {
+    background: var(--color-navy);
+    padding: 9px var(--space-4);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .entity-field {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 13px;
+  }
+  .entity-field:last-child { border-bottom: none; }
+  .field-name { color: var(--color-text-primary); font-weight: 500; }
+  .field-type { color: var(--color-muted); font-family: monospace; font-size: 12px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--color-navy);
+    padding: var(--space-8) 0;
+    text-align: center;
+  }
+  .footer-text { font-size: var(--text-sm); color: #CBD5E1; line-height: 22px; }
+  .footer-text span { color: var(--color-primary); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Product Plan · v1.0</div>
+    <h1>TikTok <span>KOL/KOC</span><br>Tracking Platform</h1>
+    <p class="hero-subtitle">Nền tảng đo lường hiệu quả creator trên TikTok — minh bạch, có sự đồng thuận, dựa trên dữ liệu thực.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="value">4</div>
+        <div class="label">Phases</div>
+      </div>
+      <div class="hero-stat">
+        <div class="value">8 tuần</div>
+        <div class="label">MVP Timeline</div>
+      </div>
+      <div class="hero-stat">
+        <div class="value">≥ 70%</div>
+        <div class="label">Onboarding Target</div>
+      </div>
+      <div class="hero-stat">
+        <div class="value">−60%</div>
+        <div class="label">Thời gian báo cáo</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-link" href="#summary">Tổng quan</a>
+    <a class="nav-link" href="#users">Người dùng</a>
+    <a class="nav-link" href="#scope">Phạm vi MVP</a>
+    <a class="nav-link" href="#flow">Luồng</a>
+    <a class="nav-link" href="#data">Dữ liệu</a>
+    <a class="nav-link" href="#kpi">KPIs</a>
+    <a class="nav-link" href="#ice">ICE Score</a>
+    <a class="nav-link" href="#roadmap">Roadmap</a>
+    <a class="nav-link" href="#risk">Rủi ro</a>
+    <a class="nav-link" href="#stories">User Stories</a>
+    <a class="nav-link" href="#nextsteps">Next Steps</a>
+    <a class="nav-link" href="#gantt">Gantt Chart</a>
+  </div>
+</nav>
+
+<!-- 01 TỔNG QUAN -->
+<section id="summary">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">01</div>
+      <h2>Tổng quan sản phẩm</h2>
+      <p>Vision, mục tiêu và phạm vi ngoài MVP</p>
+    </div>
+    <div class="grid-2" style="margin-bottom:var(--space-6)">
+      <div class="info-box">
+        <div class="info-box-label">Vision</div>
+        <p>Xây dựng nền tảng đo lường hiệu quả KOL/KOC trên TikTok một cách <strong>minh bạch, có sự đồng ý của creator</strong>, giúp công ty ra quyết định booking dựa trên dữ liệu thay vì báo cáo thủ công.</p>
+      </div>
+      <div class="info-box info-box-yellow">
+        <div class="info-box-label info-box-label-yellow">Problem Statement</div>
+        <p>Team đang quản lý toàn bộ KOC qua Google Sheets thủ công. Việc tính <strong>View Organic = Tổng View − View Ads</strong> phải làm tay, tốn thời gian và có sai số lớn. KOC không cam kết KPI view — team tự đặt mục tiêu CPV nội bộ để đánh giá hiệu quả.</p>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:var(--color-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-3)">Non-goals (MVP)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+        <span class="badge badge-gray">Không social listening toàn TikTok</span>
+        <span class="badge badge-gray">Không crawl không có consent</span>
+        <span class="badge badge-gray">Không thay thế hệ thống booking / payment</span>
+        <span class="badge badge-gray">Không cam kết lấy data private nếu API không cho phép</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 NGƯỜI DÙNG -->
+<section id="users">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">02</div>
+      <h2>Người dùng chính</h2>
+      <p>2 nhóm người dùng trực tiếp của platform</p>
+    </div>
+    <div class="grid-2" style="margin-bottom:var(--space-6)">
+      <div class="info-box">
+        <div class="info-box-label">KOL / KOC</div>
+        <p style="margin-bottom:var(--space-3)">Creator được công ty book để thực hiện campaign trên TikTok. Phân tầng theo số follower:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-3)">
+          <span class="badge badge-gray">Nano &lt; 10K followers</span>
+          <span class="badge badge-blue">Micro</span>
+          <span class="badge badge-yellow">Macro</span>
+          <span class="badge badge-navy">Celeb</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="font-size:13px;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">Nhu cầu:</strong> Xem hiệu quả nội dung sau khi được book, biết mình đang được đánh giá thế nào</div>
+          <div style="font-size:13px;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">Pain point:</strong> Không có kênh chính thức theo dõi — chỉ biết qua tin nhắn, không cam kết KPI view</div>
+          <div style="font-size:13px;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">Giá trị:</strong> Dashboard cá nhân minh bạch, chuyên nghiệp, dễ chia sẻ</div>
+        </div>
+      </div>
+      <div class="info-box info-box-yellow">
+        <div class="info-box-label info-box-label-yellow">Account / Campaign Team</div>
+        <p style="margin-bottom:var(--space-3)">Team nội bộ phụ trách booking KOC, theo dõi hiệu quả và báo cáo cho brand/client. Hiện quản lý qua Google Sheets hàng tháng.</p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="font-size:13px;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">Nhu cầu:</strong> Tính View Organic tự động, theo dõi CPV theo từng KOC và campaign</div>
+          <div style="font-size:13px;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">Pain point:</strong> Tính thủ công View Organic = Tổng View − View Ads, dễ sai, tốn thời gian</div>
+          <div style="font-size:13px;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">KPI nội bộ:</strong> CPV mục tiêu ~100đ/view — KOC không đạt sau theo dõi sẽ bị cân nhắc thay thế</div>
+        </div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Nhóm</th>
+            <th>Nhu cầu chính</th>
+            <th>Pain point hiện tại</th>
+            <th>Giá trị sản phẩm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-blue">KOL / KOC</span></td>
+            <td>Xem hiệu quả nội dung sau khi được book</td>
+            <td>Không biết brand đánh giá hiệu quả thế nào, không cam kết KPI</td>
+            <td>Dashboard minh bạch, chuyên nghiệp</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-yellow">Account / Campaign</span></td>
+            <td>Tính View Organic tự động, theo dõi CPV từng KOC</td>
+            <td>Tính thủ công View Organic = Tổng View − View Ads, sai số lớn</td>
+            <td>Tự động hóa tracking, CPV dashboard, xuất báo cáo nhanh</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PHẠM VI MVP -->
+<section id="scope">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">03</div>
+      <h2>Phạm vi MVP</h2>
+      <p>Các module và mức độ ưu tiên</p>
+    </div>
+    <div class="warn-box">
+      <span style="font-size:16px;flex-shrink:0;margin-top:1px">⚠️</span>
+      <div><strong>TikTok OAuth là bắt buộc:</strong> KOC <strong>phải</strong> đăng nhập và cấp quyền tài khoản TikTok để hệ thống lấy được View Organic chính xác. Kéo dữ liệu ngoài luồng (không qua API chính thức) không ổn định và vi phạm chính sách TikTok + luật bảo vệ dữ liệu cá nhân. Nhập thủ công chỉ là fallback tạm thời trong khi chờ API approval.</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Chức năng</th>
+            <th>Ưu tiên</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Landing KOL/KOC</td>
+            <td>Giới thiệu mục đích, quyền dữ liệu, CTA kết nối TikTok</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>Tạo niềm tin, tăng conversion</td>
+          </tr>
+          <tr>
+            <td>Consent dữ liệu</td>
+            <td>Checkbox / chữ ký điện tử đồng ý chia sẻ dữ liệu</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>Cần cho pháp lý và audit</td>
+          </tr>
+          <tr>
+            <td>TikTok OAuth <span class="badge badge-blue" style="margin-left:4px">Primary</span></td>
+            <td>KOC bắt buộc đăng nhập &amp; cấp quyền TikTok — giải pháp chính thống duy nhất để lấy View Organic chính xác</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>Xác nhận khả thi 30/05/2026</td>
+          </tr>
+          <tr>
+            <td>Nhập thủ công <span class="badge badge-gray" style="margin-left:4px">Fallback</span></td>
+            <td>Username, profile URL, video URL — dùng tạm trong khi chờ OAuth approval</td>
+            <td><span class="badge badge-orange">Should-have</span></td>
+            <td>Fallback tạm thời, không thay thế OAuth</td>
+          </tr>
+          <tr>
+            <td>View Organic Calculator</td>
+            <td>Tự động tính View Organic = Tổng View (TikTok API) − View Ads (TikTok Business)</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>Core metric thay thế tính tay hiện tại</td>
+          </tr>
+          <tr>
+            <td>CPV Dashboard</td>
+            <td>CPV = Booking Fee / View Organic; so sánh với mục tiêu ~100đ/view; flag KOC không đạt</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>KPI nội bộ chính để đánh giá KOC</td>
+          </tr>
+          <tr>
+            <td>Dashboard KOL/KOC</td>
+            <td>Tổng view, video đã tham gia, trạng thái tracking</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>Chỉ xem dữ liệu của chính họ</td>
+          </tr>
+          <tr>
+            <td>Campaign Dashboard</td>
+            <td>View Organic, CPV, ranking KOC theo campaign; tách view theo mốc thời gian (vd: view T5 vs T6 của cùng 1 video)</td>
+            <td><span class="badge badge-red">Must-have</span></td>
+            <td>Core value cho Account Team nội bộ</td>
+          </tr>
+          <tr>
+            <td>Quản lý Campaign</td>
+            <td>Tạo campaign, gán KOL/KOC, gán video cần tracking — Account Team tự quản lý</td>
+            <td><span class="badge badge-orange">Should-have</span></td>
+            <td>Có thể đơn giản ở MVP</td>
+          </tr>
+          <tr>
+            <td>Export báo cáo</td>
+            <td>CSV / Excel / PDF</td>
+            <td><span class="badge badge-orange">Should-have</span></td>
+            <td>Hữu ích cho brand / client</td>
+          </tr>
+          <tr>
+            <td>CPV / ROI</td>
+            <td>Cost per view, hiệu quả theo ngân sách booking</td>
+            <td><span class="badge badge-orange">Should-have</span></td>
+            <td>Quan trọng cho quyết định booking</td>
+          </tr>
+          <tr>
+            <td>Cảnh báo bất thường</td>
+            <td>View tăng/giảm, thiếu dữ liệu, chưa connect</td>
+            <td><span class="badge badge-gray">Could-have</span></td>
+            <td>Giai đoạn 2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LUỒNG -->
+<section id="flow">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">04</div>
+      <h2>Luồng sản phẩm</h2>
+      <p>KOC onboarding và Account/Campaign Team workflow</p>
+    </div>
+
+    <!-- FLOW 1: KOC -->
+    <div style="margin-bottom:var(--space-8)">
+      <div style="font-size:13px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-4)">Luồng KOC — Onboarding</div>
+      <div style="background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;padding:var(--space-6) var(--space-4)">
+        <svg viewBox="0 0 960 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+          <defs>
+            <marker id="arr1" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+              <polygon points="0 0, 8 3.5, 0 7" fill="#9CA3AF"/>
+            </marker>
+            <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+              <polygon points="0 0, 8 3.5, 0 7" fill="#233F9D"/>
+            </marker>
+            <marker id="arr-yellow" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+              <polygon points="0 0, 8 3.5, 0 7" fill="#D9A600"/>
+            </marker>
+          </defs>
+
+          <!-- ── NODE 1: Landing ── -->
+          <rect x="20" y="100" width="110" height="56" rx="8" fill="#EFF3FF" stroke="#233F9D" stroke-width="1.5"/>
+          <text x="75" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#233F9D">Landing</text>
+          <text x="75" y="138" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Đọc giới thiệu</text>
+          <text x="75" y="150" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">chương trình</text>
+
+          <!-- arrow 1→2 -->
+          <line x1="130" y1="128" x2="163" y2="128" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+          <!-- ── NODE 2: Consent ── -->
+          <rect x="165" y="100" width="110" height="56" rx="8" fill="#EFF3FF" stroke="#233F9D" stroke-width="1.5"/>
+          <text x="220" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#233F9D">Consent</text>
+          <text x="220" y="138" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Chấp nhận điều</text>
+          <text x="220" y="150" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">khoản bảo mật</text>
+
+          <!-- arrow 2→diamond -->
+          <line x1="275" y1="128" x2="318" y2="128" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+          <!-- ── DIAMOND: OAuth available? ── -->
+          <polygon points="340,100 375,128 340,156 305,128" fill="#FFFBEB" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="340" y="124" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" fill="#8A6200">OAuth</text>
+          <text x="340" y="136" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" fill="#8A6200">OK?</text>
+
+          <!-- YES → Node 3A -->
+          <line x1="375" y1="120" x2="418" y2="88" stroke="#D9A600" stroke-width="1.5" marker-end="url(#arr-yellow)"/>
+          <text x="395" y="97" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="600" fill="#D9A600">Yes</text>
+
+          <!-- NO → Node 3B -->
+          <line x1="375" y1="136" x2="418" y2="172" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr1)"/>
+          <text x="396" y="165" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="600" fill="#9CA3AF">No</text>
+
+          <!-- ── NODE 3A: TikTok OAuth ── -->
+          <rect x="420" y="60" width="120" height="56" rx="8" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="480" y="82" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#8A6200">TikTok OAuth</text>
+          <text x="480" y="97" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Đăng nhập &amp; cấp</text>
+          <text x="480" y="109" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">quyền (Primary)</text>
+
+          <!-- ── NODE 3B: Manual ── -->
+          <rect x="420" y="158" width="120" height="56" rx="8" fill="#F6F7F9" stroke="#E5E7EB" stroke-width="1.5"/>
+          <text x="480" y="180" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#6B7280">Nhập thủ công</text>
+          <text x="480" y="196" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#9CA3AF">Username / URL</text>
+          <text x="480" y="208" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#9CA3AF">(Fallback)</text>
+
+          <!-- 3A → Verify -->
+          <line x1="540" y1="88" x2="580" y2="120" stroke="#D9A600" stroke-width="1.5" marker-end="url(#arr-yellow)"/>
+          <!-- 3B → Verify -->
+          <line x1="540" y1="186" x2="580" y2="148" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+          <!-- ── NODE 4: Verify ── -->
+          <rect x="582" y="100" width="110" height="56" rx="8" fill="#EFF3FF" stroke="#233F9D" stroke-width="1.5"/>
+          <text x="637" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#233F9D">Xác thực</text>
+          <text x="637" y="138" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Hệ thống kiểm</text>
+          <text x="637" y="150" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">tra tài khoản</text>
+
+          <!-- arrow 4→5 -->
+          <line x1="692" y1="128" x2="725" y2="128" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+          <!-- ── NODE 5: Dashboard ── -->
+          <rect x="727" y="100" width="110" height="56" rx="8" fill="#EFF3FF" stroke="#233F9D" stroke-width="1.5"/>
+          <text x="782" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#233F9D">Dashboard</text>
+          <text x="782" y="138" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Xem view, video</text>
+          <text x="782" y="150" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">&amp; campaign</text>
+
+          <!-- arrow 5→notification -->
+          <line x1="837" y1="128" x2="870" y2="128" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+          <!-- ── NODE 6: Notification ── -->
+          <rect x="872" y="100" width="74" height="56" rx="8" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+          <text x="909" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" fill="#166534">Nhắc</text>
+          <text x="909" y="136" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#166534">nhở</text>
+          <text x="909" y="148" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" fill="#6B7280">Token hết hạn</text>
+
+          <!-- Legend -->
+          <rect x="20" y="220" width="12" height="12" rx="2" fill="#EFF3FF" stroke="#233F9D" stroke-width="1.5"/>
+          <text x="36" y="231" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Bước chính</text>
+          <rect x="120" y="220" width="12" height="12" rx="2" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="136" y="231" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">TikTok OAuth (Primary)</text>
+          <rect x="300" y="220" width="12" height="12" rx="2" fill="#F6F7F9" stroke="#E5E7EB" stroke-width="1.5"/>
+          <text x="316" y="231" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Nhập thủ công (Fallback)</text>
+          <rect x="490" y="220" width="12" height="12" rx="2" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+          <text x="506" y="231" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Hệ thống tự động</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- FLOW 2: Account/Campaign Team -->
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-4)">Luồng Account / Campaign Team</div>
+      <div style="background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;padding:var(--space-6) var(--space-4)">
+        <svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+          <defs>
+            <marker id="arr2" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+              <polygon points="0 0, 8 3.5, 0 7" fill="#9CA3AF"/>
+            </marker>
+            <marker id="arr2-y" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+              <polygon points="0 0, 8 3.5, 0 7" fill="#D9A600"/>
+            </marker>
+          </defs>
+
+          <!-- NODE 1: Login -->
+          <rect x="20" y="72" width="120" height="56" rx="8" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="80" y="94" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#8A6200">Login nội bộ</text>
+          <text x="80" y="110" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Đăng nhập,</text>
+          <text x="80" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">phân quyền</text>
+
+          <line x1="140" y1="100" x2="173" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+          <!-- NODE 2: Chọn Campaign -->
+          <rect x="175" y="72" width="120" height="56" rx="8" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="235" y="94" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#8A6200">Chọn Campaign</text>
+          <text x="235" y="110" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Brand / thời gian</text>
+          <text x="235" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">/ KOC filter</text>
+
+          <line x1="295" y1="100" x2="328" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+          <!-- NODE 3: Performance -->
+          <rect x="330" y="72" width="130" height="56" rx="8" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="395" y="91" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#8A6200">Performance</text>
+          <text x="395" y="107" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">View Organic, CPV</text>
+          <text x="395" y="119" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">từng KOC / video</text>
+
+          <line x1="460" y1="100" x2="493" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+          <!-- DIAMOND: CPV đạt? -->
+          <polygon points="525,72 562,100 525,128 488,100" fill="#FFFBEB" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="525" y="96" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" fill="#8A6200">CPV</text>
+          <text x="525" y="108" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" fill="#8A6200">đạt?</text>
+
+          <!-- YES → Export -->
+          <line x1="562" y1="90" x2="610" y2="72" stroke="#22C55E" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <text x="583" y="74" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="600" fill="#22C55E">Đạt</text>
+
+          <!-- NO → Cân nhắc đổi KOC -->
+          <line x1="562" y1="112" x2="610" y2="132" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <text x="584" y="133" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="600" fill="#EF4444">Không đạt</text>
+
+          <!-- NODE: Export (CPV đạt) -->
+          <rect x="612" y="48" width="120" height="48" rx="8" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+          <text x="672" y="68" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#166534">Export báo cáo</text>
+          <text x="672" y="84" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">CSV / Excel / PDF</text>
+
+          <!-- NODE: Đổi KOC (CPV không đạt) -->
+          <rect x="612" y="112" width="120" height="48" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5"/>
+          <text x="672" y="132" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#B91C1C">Cân nhắc</text>
+          <text x="672" y="148" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">thay KOC khác</text>
+
+          <!-- Export → Decision -->
+          <line x1="732" y1="72" x2="775" y2="90" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <!-- Đổi KOC → Decision -->
+          <line x1="732" y1="136" x2="775" y2="118" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+          <!-- NODE: Decision / Planning -->
+          <rect x="777" y="72" width="120" height="56" rx="8" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="837" y="94" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700" fill="#8A6200">Planning</text>
+          <text x="837" y="110" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Quyết định book</text>
+          <text x="837" y="122" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">campaign tiếp theo</text>
+
+          <!-- Legend -->
+          <rect x="20" y="168" width="12" height="12" rx="2" fill="#FFF8E1" stroke="#D9A600" stroke-width="1.5"/>
+          <text x="36" y="179" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">Bước Account Team</text>
+          <rect x="185" y="168" width="12" height="12" rx="2" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+          <text x="201" y="179" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">CPV đạt mục tiêu</text>
+          <rect x="340" y="168" width="12" height="12" rx="2" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5"/>
+          <text x="356" y="179" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280">CPV không đạt (~100đ/view)</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 05 DỮ LIỆU -->
+<section id="data">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">05</div>
+      <h2>Kiến trúc dữ liệu</h2>
+      <p>Entity chính và các trường dữ liệu đề xuất</p>
+    </div>
+    <div class="entity-grid">
+      <div class="entity-card">
+        <div class="entity-header">Creator</div>
+        <div class="entity-field"><span class="field-name">creator_id</span><span class="field-type">uuid PK</span></div>
+        <div class="entity-field"><span class="field-name">name</span><span class="field-type">varchar</span></div>
+        <div class="entity-field"><span class="field-name">tiktok_username</span><span class="field-type">varchar</span></div>
+        <div class="entity-field"><span class="field-name">profile_url</span><span class="field-type">text</span></div>
+        <div class="entity-field"><span class="field-name">tier</span><span class="field-type">Nano/Micro/Macro/Celeb</span></div>
+        <div class="entity-field"><span class="field-name">follower_count</span><span class="field-type">int</span></div>
+        <div class="entity-field"><span class="field-name">contact / status</span><span class="field-type">varchar</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-header">Consent</div>
+        <div class="entity-field"><span class="field-name">creator_id</span><span class="field-type">uuid FK</span></div>
+        <div class="entity-field"><span class="field-name">consent_version</span><span class="field-type">varchar</span></div>
+        <div class="entity-field"><span class="field-name">accepted_at</span><span class="field-type">timestamp</span></div>
+        <div class="entity-field"><span class="field-name">ip / device</span><span class="field-type">varchar</span></div>
+        <div class="entity-field"><span class="field-name">data_scope</span><span class="field-type">jsonb</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-header">TikTok Account</div>
+        <div class="entity-field"><span class="field-name">creator_id</span><span class="field-type">uuid FK</span></div>
+        <div class="entity-field"><span class="field-name">open_id</span><span class="field-type">varchar</span></div>
+        <div class="entity-field"><span class="field-name">access_token</span><span class="field-type">encrypted</span></div>
+        <div class="entity-field"><span class="field-name">refresh_token</span><span class="field-type">encrypted</span></div>
+        <div class="entity-field"><span class="field-name">token_expiry</span><span class="field-type">timestamp</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-header">Campaign &amp; Booking</div>
+        <div class="entity-field"><span class="field-name">campaign_id</span><span class="field-type">uuid PK</span></div>
+        <div class="entity-field"><span class="field-name">brand / objective</span><span class="field-type">varchar</span></div>
+        <div class="entity-field"><span class="field-name">start_date / end_date</span><span class="field-type">date</span></div>
+        <div class="entity-field"><span class="field-name">cpv_target</span><span class="field-type">decimal (~100đ)</span></div>
+        <div class="entity-field"><span class="field-name">fee_video</span><span class="field-type">decimal</span></div>
+        <div class="entity-field"><span class="field-name">fee_image_usage</span><span class="field-type">decimal</span></div>
+        <div class="entity-field"><span class="field-name">fee_code_ads</span><span class="field-type">decimal</span></div>
+        <div class="entity-field"><span class="field-name">product_code</span><span class="field-type">varchar</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-header">Video</div>
+        <div class="entity-field"><span class="field-name">video_id</span><span class="field-type">uuid PK</span></div>
+        <div class="entity-field"><span class="field-name">creator_id / campaign_id</span><span class="field-type">uuid FK</span></div>
+        <div class="entity-field"><span class="field-name">tiktok_video_url</span><span class="field-type">text</span></div>
+        <div class="entity-field"><span class="field-name">publish_date</span><span class="field-type">timestamp</span></div>
+        <div class="entity-field"><span class="field-name">caption</span><span class="field-type">text</span></div>
+      </div>
+      <div class="entity-card">
+        <div class="entity-header">Metrics Snapshot</div>
+        <div class="entity-field"><span class="field-name">video_id</span><span class="field-type">uuid FK</span></div>
+        <div class="entity-field"><span class="field-name">view_total</span><span class="field-type">bigint</span></div>
+        <div class="entity-field"><span class="field-name">view_ads</span><span class="field-type">bigint</span></div>
+        <div class="entity-field"><span class="field-name">view_organic</span><span class="field-type">bigint (total − ads)</span></div>
+        <div class="entity-field"><span class="field-name">cpv</span><span class="field-type">decimal (fee/organic)</span></div>
+        <div class="entity-field"><span class="field-name">like / comment / share</span><span class="field-type">int</span></div>
+        <div class="entity-field"><span class="field-name">snapshot_date</span><span class="field-type">date</span></div>
+        <div class="entity-field"><span class="field-name">collected_at</span><span class="field-type">timestamp</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 KPIs -->
+<section id="kpi">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">06</div>
+      <h2>Success Metrics</h2>
+      <p>KPIs và targets cho MVP</p>
+    </div>
+    <div class="grid-3">
+      <div class="kpi-card">
+        <div class="kpi-target">≥ 70%</div>
+        <div class="kpi-label">Creator Onboarding</div>
+        <div class="kpi-sub">% KOL/KOC hoàn tất consent + connect</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-target">≥ 85%</div>
+        <div class="kpi-label">Data Completeness</div>
+        <div class="kpi-sub">% booking có video / link hợp lệ</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-target">−60%</div>
+        <div class="kpi-label">Reporting Efficiency</div>
+        <div class="kpi-sub">Giảm thời gian tổng hợp báo cáo cho Account Team</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-target">1–4×/ngày</div>
+        <div class="kpi-label">Data Freshness</div>
+        <div class="kpi-sub">Tần suất cập nhật view snapshot</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-target">≥ 80%</div>
+        <div class="kpi-label">Campaign Coverage</div>
+        <div class="kpi-sub">% campaign có CPV / report chuẩn hóa</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-target">≥ 70%</div>
+        <div class="kpi-label">Team Adoption</div>
+        <div class="kpi-sub">Weekly active Account / Campaign Team users</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ICE -->
+<section id="ice">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">07</div>
+      <h2>Prioritization — ICE Score</h2>
+      <p>Impact × Confidence × Ease</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Impact</th>
+            <th>Confidence</th>
+            <th>Ease</th>
+            <th>ICE Score</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Manual TikTok URL fallback</td>
+            <td>8</td><td>9</td><td>9</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:87%"></div></div><span class="ice-score">8.7</span></div></td>
+            <td><span class="badge badge-red">P0</span></td>
+          </tr>
+          <tr>
+            <td>BI Campaign Dashboard</td>
+            <td>10</td><td>8</td><td>6</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:80%"></div></div><span class="ice-score">8.0</span></div></td>
+            <td><span class="badge badge-red">P0</span></td>
+          </tr>
+          <tr>
+            <td>Export CSV / Excel</td>
+            <td>7</td><td>9</td><td>8</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill ice-fill-yellow" style="width:80%"></div></div><span class="ice-score">8.0</span></div></td>
+            <td><span class="badge badge-orange">P1</span></td>
+          </tr>
+          <tr>
+            <td>Consent + TikTok Login</td>
+            <td>9</td><td>7</td><td>6</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:73%"></div></div><span class="ice-score">7.3</span></div></td>
+            <td><span class="badge badge-red">P0</span></td>
+          </tr>
+          <tr>
+            <td>KOL/KOC Dashboard</td>
+            <td>7</td><td>8</td><td>7</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:73%"></div></div><span class="ice-score">7.3</span></div></td>
+            <td><span class="badge badge-red">P0</span></td>
+          </tr>
+          <tr>
+            <td>Metrics Snapshot theo ngày</td>
+            <td>9</td><td>7</td><td>6</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:73%"></div></div><span class="ice-score">7.3</span></div></td>
+            <td><span class="badge badge-red">P0</span></td>
+          </tr>
+          <tr>
+            <td>CPV / ROI Dashboard</td>
+            <td>8</td><td>7</td><td>7</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill ice-fill-yellow" style="width:73%"></div></div><span class="ice-score">7.3</span></div></td>
+            <td><span class="badge badge-orange">P1</span></td>
+          </tr>
+          <tr>
+            <td>Alert token / video thiếu</td>
+            <td>6</td><td>7</td><td>7</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:67%"></div></div><span class="ice-score">6.7</span></div></td>
+            <td><span class="badge badge-gray">P2</span></td>
+          </tr>
+          <tr>
+            <td>AI recommendation book lại</td>
+            <td>7</td><td>5</td><td>4</td>
+            <td><div class="ice-bar-wrap"><div class="ice-bar"><div class="ice-fill" style="width:53%"></div></div><span class="ice-score">5.3</span></div></td>
+            <td><span class="badge badge-gray">P3</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ROADMAP -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">08</div>
+      <h2>Roadmap</h2>
+      <p>4 phases từ Discovery đến Intelligence &amp; Scaling</p>
+    </div>
+    <div class="grid-2">
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-num">0</div>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);color:var(--color-text-primary)">Discovery &amp; Feasibility</div>
+            <div style="font-size:12px;color:var(--color-muted)">Tuần 1–2</div>
+          </div>
+          <span class="badge badge-blue" style="margin-left:auto">Pre-MVP</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Xác nhận pháp lý dữ liệu</div><div class="phase-item-desc">Consent text, privacy policy, data retention</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">TikTok API feasibility</div><div class="phase-item-desc">Danh sách scope, khả năng lấy view</div></div></div>
+
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Define MVP</div><div class="phase-item-desc">PRD v1, wireframe, backlog</div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-num">1</div>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);color:var(--color-text-primary)">MVP Core</div>
+            <div style="font-size:12px;color:var(--color-muted)">Tuần 3–6</div>
+          </div>
+          <span class="badge badge-green" style="margin-left:auto">Launch</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item"><div class="phase-dot pd-yellow"></div><div><div class="phase-item-title">Landing + Consent</div><div class="phase-item-desc">Trang onboarding cho creator</div></div></div>
+          <div class="phase-item"><div class="phase-dot pd-yellow"></div><div><div class="phase-item-title">Login / Creator Profile</div><div class="phase-item-desc">TikTok OAuth hoặc nhập thủ công</div></div></div>
+          <div class="phase-item"><div class="phase-dot pd-yellow"></div><div><div class="phase-item-title">Campaign Management</div><div class="phase-item-desc">Tạo campaign, gán creator, gán video</div></div></div>
+          <div class="phase-item"><div class="phase-dot pd-yellow"></div><div><div class="phase-item-title">Campaign + KOL/KOC Dashboard</div><div class="phase-item-desc">View, ranking cho Account Team; performance cá nhân cho KOL/KOC</div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-num">2</div>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);color:var(--color-text-primary)">Reporting &amp; Automation</div>
+            <div style="font-size:12px;color:var(--color-muted)">Tuần 7–10</div>
+          </div>
+          <span class="badge badge-yellow" style="margin-left:auto">Scale</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Export báo cáo</div><div class="phase-item-desc">CSV / Excel / PDF</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Data quality alert</div><div class="phase-item-desc">Thiếu video, token hết hạn</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">CPV / ROI</div><div class="phase-item-desc">Hiệu quả theo booking cost</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">RBAC + Audit log</div><div class="phase-item-desc">Role-based access, lịch sử consent</div></div></div>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-num">3</div>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);color:var(--color-text-primary)">Intelligence &amp; Scaling</div>
+            <div style="font-size:12px;color:var(--color-muted)">Tuần 11+</div>
+          </div>
+          <span class="badge badge-navy" style="margin-left:auto">AI</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Benchmark creator</div><div class="phase-item-desc">So sánh theo ngành / category</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Forecast view</div><div class="phase-item-desc">Dự đoán hiệu quả từ dữ liệu lịch sử</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Recommendation engine</div><div class="phase-item-desc">Gợi ý creator nên book lại</div></div></div>
+          <div class="phase-item"><div class="phase-dot"></div><div><div class="phase-item-title">Client portal</div><div class="phase-item-desc">Brand / client xem báo cáo riêng</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 09 RỦI RO -->
+<section id="risk">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">09</div>
+      <h2>Risk Register</h2>
+      <p>Rủi ro đã xác định và hướng xử lý</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Rủi ro</th>
+            <th>Mức độ</th>
+            <th>Tác động</th>
+            <th>Giải pháp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--color-muted);font-weight:500;font-size:12px">R-01</td>
+            <td>TikTok không cấp đủ API scope để lấy view</td>
+            <td><span class="risk-dot risk-high"></span>Cao</td>
+            <td>Không tự động hóa hoàn toàn</td>
+            <td>Fallback nhập video URL / upload report thủ công</td>
+          </tr>
+          <tr>
+            <td style="color:var(--color-muted);font-weight:500;font-size:12px">R-02</td>
+            <td>KOL/KOC ngại chia sẻ dữ liệu</td>
+            <td><span class="risk-dot risk-high"></span>Cao</td>
+            <td>Tỷ lệ onboarding thấp</td>
+            <td>Consent rõ ràng, chỉ lấy dữ liệu cần thiết, cho phép thu hồi quyền</td>
+          </tr>
+          <tr>
+            <td style="color:var(--color-muted);font-weight:500;font-size:12px">R-03</td>
+            <td>Rủi ro pháp lý / compliance dữ liệu cá nhân</td>
+            <td><span class="risk-dot risk-high"></span>Cao</td>
+            <td>Vi phạm PDPA / GDPR</td>
+            <td>Mã hóa token, RBAC, audit log, data retention policy</td>
+          </tr>
+          <tr>
+            <td style="color:var(--color-muted);font-weight:500;font-size:12px">R-04</td>
+            <td>Dữ liệu view thay đổi liên tục</td>
+            <td><span class="risk-dot risk-mid"></span>Trung bình</td>
+            <td>Báo cáo lệch thời điểm</td>
+            <td>Lưu snapshot theo lịch, hiển thị timestamp rõ ràng</td>
+          </tr>
+          <tr>
+            <td style="color:var(--color-muted);font-weight:500;font-size:12px">R-05</td>
+            <td>Mapping sai video với campaign</td>
+            <td><span class="risk-dot risk-mid"></span>Trung bình</td>
+            <td>Sai báo cáo hiệu quả</td>
+            <td>Bắt buộc gán video URL / deliverable ID khi tạo booking</td>
+          </tr>
+          <tr>
+            <td style="color:var(--color-muted);font-weight:500;font-size:12px">R-06</td>
+            <td>Token hết hạn hoặc bị thu hồi</td>
+            <td><span class="risk-dot risk-mid"></span>Trung bình</td>
+            <td>Mất dữ liệu tự động</td>
+            <td>Alert notification + flow reconnect cho creator</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 10 USER STORIES -->
+<section id="stories">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">10</div>
+      <h2>User Stories</h2>
+      <p>Acceptance criteria cho 2 nhóm người dùng chính</p>
+    </div>
+    <div class="grid-2">
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-persona">KOL / KOC</span>
+          <span class="badge badge-red">Must-have</span>
+        </div>
+        <div class="story-body">
+          <div class="story-action">Là KOL/KOC, tôi muốn hiểu dữ liệu nào được thu thập để yên tâm đồng ý</div>
+          <ul class="story-criteria">
+            <li><span class="check-icon">✓</span>Trang consent hiển thị scope, mục đích, thời hạn lưu trữ rõ ràng</li>
+            <li><span class="check-icon">✓</span>Có nút thu hồi quyền bất cứ lúc nào</li>
+            <li><span class="check-icon">✓</span>Consent log lưu kèm timestamp và IP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-persona">KOL / KOC</span>
+          <span class="badge badge-red">Must-have</span>
+        </div>
+        <div class="story-body">
+          <div class="story-action">Là KOL/KOC, tôi muốn đăng nhập TikTok để không cần gửi số liệu thủ công</div>
+          <ul class="story-criteria">
+            <li><span class="check-icon">✓</span>Có nút "Kết nối TikTok" qua OAuth Login Kit</li>
+            <li><span class="check-icon">✓</span>Fallback nhập profile URL / video URL nếu OAuth thất bại</li>
+            <li><span class="check-icon">✓</span>Hiển thị trạng thái connected / disconnected</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-persona">KOL / KOC</span>
+          <span class="badge badge-red">Must-have</span>
+        </div>
+        <div class="story-body">
+          <div class="story-action">Là KOL/KOC, tôi muốn xem hiệu quả video của mình</div>
+          <ul class="story-criteria">
+            <li><span class="check-icon">✓</span>Dashboard hiển thị view theo từng video / campaign</li>
+            <li><span class="check-icon">✓</span>Hiển thị trạng thái video: đang tracking / thiếu data</li>
+            <li><span class="check-icon">✓</span>Chỉ xem được dữ liệu của chính mình</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-persona">Account / Campaign Team</span>
+          <span class="badge badge-red">Must-have</span>
+        </div>
+        <div class="story-body">
+          <div class="story-action">Là Account Team, tôi muốn xem hiệu quả toàn bộ KOL/KOC đã book trong campaign</div>
+          <ul class="story-criteria">
+            <li><span class="check-icon">✓</span>Dashboard có filter campaign / date range / creator</li>
+            <li><span class="check-icon">✓</span>Hiển thị ranking theo view và CPV</li>
+            <li><span class="check-icon">✓</span>Có thể so sánh hiệu quả giữa các KOL/KOC cùng campaign</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-persona">Account / Campaign Team</span>
+          <span class="badge badge-orange">Should-have</span>
+        </div>
+        <div class="story-body">
+          <div class="story-action">Là Account Team, tôi muốn xuất báo cáo để gửi cho brand / client</div>
+          <ul class="story-criteria">
+            <li><span class="check-icon">✓</span>Export CSV / Excel tối thiểu</li>
+            <li><span class="check-icon">✓</span>Lọc theo campaign hoặc creator trước khi export</li>
+            <li><span class="check-icon">✓</span>PDF report có logo công ty (Phase 2)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-header">
+          <span class="story-persona">Account / Campaign Team</span>
+          <span class="badge badge-orange">Should-have</span>
+        </div>
+        <div class="story-body">
+          <div class="story-action">Là Account Team, tôi muốn biết KOL/KOC nào chưa submit đủ video</div>
+          <ul class="story-criteria">
+            <li><span class="check-icon">✓</span>Có trạng thái connected / missing / reconnect required trên dashboard</li>
+            <li><span class="check-icon">✓</span>Danh sách creator thiếu video link được highlight rõ</li>
+            <li><span class="check-icon">✓</span>Có thể nhắc KOL/KOC submit lại trực tiếp từ hệ thống</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 11 NEXT STEPS -->
+<section id="nextsteps">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">11</div>
+      <h2>Next Steps</h2>
+      <p>Action plan với deadline cụ thể từ buổi họp</p>
+    </div>
+    <div class="card" style="padding:var(--space-4) var(--space-6)">
+      <div class="step-row">
+        <div class="step-week" style="background:var(--color-blue);color:#fff;min-width:100px">Ngay bây giờ</div>
+        <div><div class="step-title">Bàn giao dự án — nhân sự mới thay Thắng</div><div class="step-meta">Owner: PM + HR · Thắng đang overload với các dự án khác</div></div>
+        <div class="step-deliverable">Handover Plan</div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-week" style="min-width:100px">1–2 tuần tới</div>
+        <div><div class="step-title">Tech thử nghiệm kết nối TikTok API — kiểm tra tính khả thi lấy View Organic</div><div class="step-meta">Owner: Tech Lead</div></div>
+        <div class="step-deliverable">API Feasibility Report</div>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="min-width:100px">1–2 tuần tới</div>
+        <div><div class="step-title">Soạn consent / privacy policy cho KOC</div><div class="step-meta">Owner: Legal + PM · Chưa cần thay đổi hợp đồng KOC vội</div></div>
+        <div class="step-deliverable">Consent Flow + Policy Text</div>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="background:#D9A600;min-width:100px">30/05/2026</div>
+        <div><div class="step-title">Xác nhận khả năng truy cập và kéo dữ liệu View Organic từ TikTok API</div><div class="step-meta">Owner: Tech Lead · Milestone quyết định hướng triển khai tiếp theo</div></div>
+        <div class="step-deliverable">Go / No-go Decision</div>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="background:#D9A600;min-width:100px">15/06/2026</div>
+        <div><div class="step-title">Hoàn thiện giao diện Admin — bắt đầu cho KOC chạy thử nghiệm</div><div class="step-meta">Owner: Engineering + PM</div></div>
+        <div class="step-deliverable">Admin UI + KOC Pilot</div>
+      </div>
+      <div class="step-row" style="border-bottom:none">
+        <div class="step-week" style="background:var(--color-success);color:#fff;min-width:100px">Tháng 07/2026</div>
+        <div><div class="step-title">Chính thức vận hành hệ thống toàn bộ</div><div class="step-meta">Owner: PM + Campaign Team</div></div>
+        <div class="step-deliverable">Go Live 🚀</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 GANTT CHART -->
+<section id="gantt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">12</div>
+      <h2>Gantt Chart</h2>
+      <p>Timeline thực tế — từ API feasibility đến Go Live tháng 07/2026</p>
+    </div>
+
+    <div style="overflow-x:auto">
+      <div style="min-width:780px">
+
+        <!-- Header weeks -->
+        <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;margin-bottom:var(--space-2)">
+          <div style="font-size:12px;font-weight:700;color:var(--color-muted);text-transform:uppercase;letter-spacing:.06em;padding:0 0 var(--space-2) 0">Công việc</div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T1<br><span style="color:var(--color-muted);font-weight:400">T5/W1</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T2<br><span style="color:var(--color-muted);font-weight:400">T5/W2</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T3<br><span style="color:var(--color-muted);font-weight:400">T5/W3</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T4<br><span style="color:var(--color-muted);font-weight:400">T5/W4</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T5<br><span style="color:var(--color-muted);font-weight:400">T6/W1</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T6<br><span style="color:var(--color-muted);font-weight:400">T6/W2</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T7<br><span style="color:var(--color-muted);font-weight:400">T6/W3</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T8<br><span style="color:var(--color-muted);font-weight:400">T7/2026</span></div>
+        </div>
+
+        <!-- Phase labels -->
+        <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;margin-bottom:var(--space-3)">
+          <div></div>
+          <div style="grid-column:span 2;background:#EFF3FF;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:var(--color-blue);padding:4px 0;margin-right:2px">Discovery · đến 30/05</div>
+          <div style="grid-column:span 4;background:#FFF8E1;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#8A6200;padding:4px 0;margin:0 2px">Development · đến 15/06</div>
+          <div style="grid-column:span 2;background:#F0FDF4;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#166534;padding:4px 0;margin-left:2px">Go Live · T07/2026</div>
+        </div>
+
+        <!-- Gantt rows -->
+        <div style="border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden">
+
+          <!-- Group: Discovery -->
+          <div style="background:var(--color-navy);padding:8px 16px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">Discovery &amp; Planning</span>
+          </div>
+
+          <!-- Row -->
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Chốt MVP &amp; KPI</div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">PM</span></div>
+            <div style="grid-column:span 7"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">TikTok API Feasibility</div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Tech</span></div>
+            <div style="grid-column:span 7"></div>
+          </div>
+
+
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Consent / Privacy Policy</div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Legal</span></div>
+            <div style="grid-column:span 6"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Wireframe &amp; Prototype</div>
+            <div style="grid-column:span 1"></div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Design</span></div>
+            <div style="grid-column:span 6"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Data model &amp; Backlog</div>
+            <div style="grid-column:span 1"></div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">PM+Tech</span></div>
+            <div style="grid-column:span 6"></div>
+          </div>
+
+          <!-- Group: Development -->
+          <div style="background:var(--color-navy);padding:8px 16px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">MVP Development</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Landing + Consent</div>
+            <div style="grid-column:span 2"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+            <div style="grid-column:span 5"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">TikTok Connect / Manual</div>
+            <div style="grid-column:span 2"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+            <div style="grid-column:span 4"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">KOL/KOC Dashboard</div>
+            <div style="grid-column:span 3"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+            <div style="grid-column:span 3"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Campaign Dashboard</div>
+            <div style="grid-column:span 4"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+            <div style="grid-column:span 2"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Metrics Snapshot &amp; Data</div>
+            <div style="grid-column:span 3"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 3;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+            <div style="grid-column:span 2"></div>
+          </div>
+
+          <!-- Group: Pilot -->
+          <div style="background:var(--color-navy);padding:8px 16px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">Pilot &amp; Iteration</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Onboard KOL/KOC pilot</div>
+            <div style="grid-column:span 6"></div>
+            <div style="background:#DCFCE7;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#166534">PM</span></div>
+            <div style="grid-column:span 1"></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Pilot Report &amp; Iteration</div>
+            <div style="grid-column:span 6"></div>
+            <div style="background:#DCFCE7;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#166534">PM+Dev</span></div>
+          </div>
+
+        </div><!-- end gantt table -->
+
+        <!-- Legend -->
+        <div style="display:flex;gap:var(--space-5);margin-top:var(--space-4);flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:var(--space-2)">
+            <div style="width:28px;height:12px;background:#EFF3FF;border-radius:3px"></div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">Discovery / Planning</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2)">
+            <div style="width:28px;height:12px;background:#FFF3CD;border-radius:3px"></div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">Development</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2)">
+            <div style="width:28px;height:12px;background:#DCFCE7;border-radius:3px"></div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">Pilot &amp; Iteration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-text">
+      <span>TikTok KOL/KOC Tracking Platform</span> &nbsp;·&nbsp; Product Plan v1.0 &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Dành cho review nội bộ PM / PO / BA
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
