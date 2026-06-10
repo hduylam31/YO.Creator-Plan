@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TikTok KOL/KOC Platform — Product Plan</title>
+<title>YO.Creator Platform — SRS v5.0 Product Plan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -509,25 +509,25 @@
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Product Plan · v1.0</div>
-    <h1>TikTok <span>KOL/KOC</span><br>Tracking Platform</h1>
-    <p class="hero-subtitle">Nền tảng đo lường hiệu quả creator trên TikTok — minh bạch, có sự đồng thuận, dựa trên dữ liệu thực.</p>
+    <div class="hero-eyebrow">YO.Creator · SRS v5.0</div>
+    <h1><span>YO.Creator</span><br>KOL/KOC Platform</h1>
+    <p class="hero-subtitle">Nền tảng tự động hóa quản lý campaign KOL/KOC — tích hợp TikTok API, đo View Organic, tính CPV minh bạch.</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="value">4</div>
-        <div class="label">Phases</div>
+        <div class="value">9 tuần</div>
+        <div class="label">12/05 – 14/07</div>
       </div>
       <div class="hero-stat">
-        <div class="value">8 tuần</div>
-        <div class="label">MVP Timeline</div>
+        <div class="value">39</div>
+        <div class="label">API Endpoints</div>
       </div>
       <div class="hero-stat">
-        <div class="value">≥ 70%</div>
-        <div class="label">Onboarding Target</div>
+        <div class="value">33</div>
+        <div class="label">Dev KPIs</div>
       </div>
       <div class="hero-stat">
-        <div class="value">−60%</div>
-        <div class="label">Thời gian báo cáo</div>
+        <div class="value">14/07</div>
+        <div class="label">Go Live</div>
       </div>
     </div>
   </div>
@@ -1394,44 +1394,86 @@
   <div class="container">
     <div class="section-header">
       <div class="section-tag">11</div>
-      <h2>Next Steps</h2>
-      <p>Action plan với deadline cụ thể từ buổi họp</p>
+      <h2>Next Steps — Action Plan</h2>
+      <p>Timeline 9 tuần từ Discovery đến Go Live · 12/05 – 14/07/2026</p>
     </div>
     <div class="card" style="padding:var(--space-4) var(--space-6)">
+
+      <!-- Discovery -->
+      <div style="padding:6px 0 var(--space-2) 0;margin-bottom:var(--space-1)">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--color-blue)">Discovery</span>
+      </div>
       <div class="step-row">
-        <div class="step-week" style="background:var(--color-blue);color:#fff;min-width:100px">Ngay bây giờ</div>
-        <div><div class="step-title">Bàn giao dự án — nhân sự mới thay Thắng</div><div class="step-meta">Owner: PM + HR · Thắng đang overload với các dự án khác</div></div>
-        <div class="step-deliverable">Handover Plan</div>
+        <div class="step-week" style="background:var(--color-blue);color:#fff;min-width:110px">T5/W2 · 12/05</div>
+        <div><div class="step-title">Kickoff, xác định scope, phỏng vấn stakeholder</div><div class="step-meta">Owner: PM · Stakeholders: Business, QA, Dev</div></div>
+        <div class="step-deliverable">Problem Statement</div>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="background:var(--color-blue);color:#fff;min-width:110px">T5/W3 · 19/05</div>
+        <div><div class="step-title">Wireframe, TikTok API feasibility, ERD</div><div class="step-meta">Owner: Design + Tech Lead</div></div>
+        <div class="step-deliverable">Wireframe · ERD</div>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="background:var(--color-blue);color:#fff;min-width:110px">T5/W4 · 26/05</div>
+        <div><div class="step-title">PRD v1, ICE scoring, chốt backlog, Go/No-go</div><div class="step-meta">Owner: PM + Tech Lead</div></div>
+        <div class="step-deliverable">PRD v1 · Backlog</div>
       </div>
 
-      <div class="step-row">
-        <div class="step-week" style="min-width:100px">1–2 tuần tới</div>
-        <div><div class="step-title">Tech thử nghiệm kết nối TikTok API — kiểm tra tính khả thi lấy View Organic</div><div class="step-meta">Owner: Tech Lead</div></div>
-        <div class="step-deliverable">API Feasibility Report</div>
+      <!-- Bàn giao -->
+      <div style="padding:var(--space-4) 0 var(--space-2) 0;margin-bottom:var(--space-1)">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8A6200">Bàn giao</span>
       </div>
       <div class="step-row">
-        <div class="step-week" style="min-width:100px">1–2 tuần tới</div>
-        <div><div class="step-title">Soạn consent / privacy policy cho KOC</div><div class="step-meta">Owner: Legal + PM · Chưa cần thay đổi hợp đồng KOC vội</div></div>
-        <div class="step-deliverable">Consent Flow + Policy Text</div>
+        <div class="step-week" style="background:#D9A600;min-width:110px">T6/W1 · 02/06</div>
+        <div><div class="step-title">PM bàn giao toàn bộ tài liệu cho Dev, setup môi trường</div><div class="step-meta">Owner: PM → Dev · PRD, Wireframe, API spec, Data model</div></div>
+        <div class="step-deliverable">Handover Complete ✅</div>
+      </div>
+
+      <!-- Dev MVP -->
+      <div style="padding:var(--space-4) 0 var(--space-2) 0;margin-bottom:var(--space-1)">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#92400E">Dev MVP</span>
       </div>
       <div class="step-row">
-        <div class="step-week" style="background:#D9A600;min-width:100px">30/05/2026</div>
-        <div><div class="step-title">Xác nhận khả năng truy cập và kéo dữ liệu View Organic từ TikTok API</div><div class="step-meta">Owner: Tech Lead · Milestone quyết định hướng triển khai tiếp theo</div></div>
-        <div class="step-deliverable">Go / No-go Decision</div>
+        <div class="step-week" style="background:#F59E0B;color:#fff;min-width:110px">T6/W2 · 09/06</div>
+        <div><div class="step-title">Sprint 1 — Landing, Consent Flow, TikTok OAuth / Manual fallback</div><div class="step-meta">Owner: Engineering · US-01, US-02</div></div>
+        <div class="step-deliverable">Sprint 1 Done</div>
       </div>
       <div class="step-row">
-        <div class="step-week" style="background:#D9A600;min-width:100px">15/06/2026</div>
-        <div><div class="step-title">Hoàn thiện giao diện Admin — bắt đầu cho KOC chạy thử nghiệm</div><div class="step-meta">Owner: Engineering + PM</div></div>
-        <div class="step-deliverable">Admin UI + KOC Pilot</div>
+        <div class="step-week" style="background:#F59E0B;color:#fff;min-width:110px">T6/W3 · 16/06</div>
+        <div><div class="step-title">Sprint 2 — View Organic Calculator, KOL/KOC Dashboard</div><div class="step-meta">Owner: Engineering · US-03</div></div>
+        <div class="step-deliverable">Sprint 2 Done</div>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="background:#F59E0B;color:#fff;min-width:110px">T6/W4 · 23/06</div>
+        <div><div class="step-title">Sprint 3 — CPV Dashboard, Campaign Dashboard, QA</div><div class="step-meta">Owner: Engineering + QA · US-04, US-07</div></div>
+        <div class="step-deliverable">MVP Complete ✅</div>
+      </div>
+
+      <!-- Pilot -->
+      <div style="padding:var(--space-4) 0 var(--space-2) 0;margin-bottom:var(--space-1)">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#166534">Pilot</span>
+      </div>
+      <div class="step-row">
+        <div class="step-week" style="background:#22C55E;color:#fff;min-width:110px">T7/W1–W2 · 30/06</div>
+        <div><div class="step-title">Onboard KOC nội bộ, thu thập feedback, iteration</div><div class="step-meta">Owner: PM + Dev</div></div>
+        <div class="step-deliverable">Pilot Report</div>
+      </div>
+
+      <!-- Go Live -->
+      <div style="padding:var(--space-4) 0 var(--space-2) 0;margin-bottom:var(--space-1)">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#166534">Go Live</span>
       </div>
       <div class="step-row" style="border-bottom:none">
-        <div class="step-week" style="background:var(--color-success);color:#fff;min-width:100px">Tháng 07/2026</div>
-        <div><div class="step-title">Chính thức vận hành hệ thống toàn bộ</div><div class="step-meta">Owner: PM + Campaign Team</div></div>
+        <div class="step-week" style="background:var(--color-success);color:#fff;min-width:110px">T7/W3 · 14/07</div>
+        <div><div class="step-title">Vận hành chính thức toàn bộ hệ thống</div><div class="step-meta">Owner: PM + Campaign Team</div></div>
         <div class="step-deliverable">Go Live 🚀</div>
       </div>
+
     </div>
   </div>
 </section>
+
+
 
 <!-- 12 GANTT CHART -->
 <section id="gantt">
@@ -1439,132 +1481,195 @@
     <div class="section-header">
       <div class="section-tag">12</div>
       <h2>Gantt Chart</h2>
-      <p>Timeline thực tế — từ API feasibility đến Go Live tháng 07/2026</p>
+      <p>Timeline 9 tuần · Dev bắt đầu T6/W2 (09/06) · Go Live 14/07/2026</p>
     </div>
 
     <div style="overflow-x:auto">
-      <div style="min-width:780px">
+      <div style="min-width:900px">
 
-        <!-- Header weeks -->
-        <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;margin-bottom:var(--space-2)">
+        <!-- Header weeks — 9 cột theo SRS -->
+        <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;margin-bottom:var(--space-2)">
           <div style="font-size:12px;font-weight:700;color:var(--color-muted);text-transform:uppercase;letter-spacing:.06em;padding:0 0 var(--space-2) 0">Công việc</div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T1<br><span style="color:var(--color-muted);font-weight:400">T5/W1</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T2<br><span style="color:var(--color-muted);font-weight:400">T5/W2</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T3<br><span style="color:var(--color-muted);font-weight:400">T5/W3</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T4<br><span style="color:var(--color-muted);font-weight:400">T5/W4</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T5<br><span style="color:var(--color-muted);font-weight:400">T6/W1</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T6<br><span style="color:var(--color-muted);font-weight:400">T6/W2</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T7<br><span style="color:var(--color-muted);font-weight:400">T6/W3</span></div>
-          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T8<br><span style="color:var(--color-muted);font-weight:400">T7/2026</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T5/W2<br><span style="color:var(--color-muted);font-weight:400">12–16/05</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T5/W3<br><span style="color:var(--color-muted);font-weight:400">19–23/05</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T5/W4<br><span style="color:var(--color-muted);font-weight:400">26–30/05</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T6/W1<br><span style="color:var(--color-muted);font-weight:400">02–06/06</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T6/W2<br><span style="color:var(--color-muted);font-weight:400">09–13/06</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T6/W3<br><span style="color:var(--color-muted);font-weight:400">16–20/06</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T6/W4<br><span style="color:var(--color-muted);font-weight:400">23–27/06</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T7/W1–W2<br><span style="color:var(--color-muted);font-weight:400">30/06–11/07</span></div>
+          <div style="text-align:center;font-size:11px;font-weight:600;color:var(--color-text-secondary);padding-bottom:var(--space-2)">T7/W3<br><span style="color:var(--color-muted);font-weight:400">14/07</span></div>
         </div>
 
         <!-- Phase labels -->
-        <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;margin-bottom:var(--space-3)">
+        <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;margin-bottom:var(--space-3)">
           <div></div>
-          <div style="grid-column:span 2;background:#EFF3FF;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:var(--color-blue);padding:4px 0;margin-right:2px">Discovery · đến 30/05</div>
-          <div style="grid-column:span 4;background:#FFF8E1;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#8A6200;padding:4px 0;margin:0 2px">Development · đến 15/06</div>
-          <div style="grid-column:span 2;background:#F0FDF4;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#166534;padding:4px 0;margin-left:2px">Go Live · T07/2026</div>
+          <div style="grid-column:span 3;background:#EFF3FF;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:var(--color-blue);padding:4px 0;margin-right:2px">Discovery · T5/W2–T5/W4</div>
+          <div style="grid-column:span 1;background:#FFF8E1;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#8A6200;padding:4px 0;margin:0 2px">Bàn giao</div>
+          <div style="grid-column:span 3;background:#FFF3CD;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#92400E;padding:4px 0;margin:0 2px">Dev MVP · S1–S3</div>
+          <div style="grid-column:span 1;background:#DCFCE7;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#166534;padding:4px 0;margin:0 2px">Pilot</div>
+          <div style="grid-column:span 1;background:#D1FAE5;border-radius:var(--radius-sm);text-align:center;font-size:11px;font-weight:700;color:#065F46;padding:4px 0;margin-left:2px">Go Live</div>
         </div>
 
         <!-- Gantt rows -->
         <div style="border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden">
 
-          <!-- Group: Discovery -->
+          <!-- ── Group: Discovery ── -->
           <div style="background:var(--color-navy);padding:8px 16px">
             <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">Discovery &amp; Planning</span>
           </div>
 
-          <!-- Row -->
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Chốt MVP &amp; KPI</div>
-            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">PM</span></div>
+          <!-- Kickoff & Stakeholder — T5/W2 col1 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Kickoff &amp; Stakeholder</div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">PM</span></div>
+            <div style="grid-column:span 8"></div>
+          </div>
+
+          <!-- TikTok API Feasibility — T5/W2 col1 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">TikTok API Feasibility</div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Tech</span></div>
+            <div style="grid-column:span 8"></div>
+          </div>
+
+          <!-- Wireframe & User Flow — T5/W3 col2 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Wireframe &amp; User Flow</div>
+            <div style="grid-column:span 1"></div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Design</span></div>
             <div style="grid-column:span 7"></div>
           </div>
 
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">TikTok API Feasibility</div>
-            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Tech</span></div>
+          <!-- Consent / Privacy Policy — T5/W3 col2 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Consent / Privacy Policy</div>
+            <div style="grid-column:span 1"></div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Legal</span></div>
             <div style="grid-column:span 7"></div>
           </div>
 
-
-
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Consent / Privacy Policy</div>
-            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Legal</span></div>
-            <div style="grid-column:span 6"></div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Wireframe &amp; Prototype</div>
-            <div style="grid-column:span 1"></div>
-            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">Design</span></div>
-            <div style="grid-column:span 6"></div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Data model &amp; Backlog</div>
-            <div style="grid-column:span 1"></div>
-            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">PM+Tech</span></div>
-            <div style="grid-column:span 6"></div>
-          </div>
-
-          <!-- Group: Development -->
-          <div style="background:var(--color-navy);padding:8px 16px">
-            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">MVP Development</span>
-          </div>
-
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Landing + Consent</div>
+          <!-- PRD v1 & Backlog — T5/W4 col3 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">PRD v1 &amp; Backlog</div>
             <div style="grid-column:span 2"></div>
-            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+            <div style="background:#EFF3FF;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:var(--color-blue)">PM+Tech</span></div>
+            <div style="grid-column:span 6"></div>
+          </div>
+
+          <!-- ── Group: Bàn giao ── -->
+          <div style="background:var(--color-navy);padding:8px 16px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">Bàn Giao Tài Liệu</span>
+          </div>
+
+          <!-- Bàn giao tài liệu — T6/W1 col4 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Bàn giao tài liệu</div>
+            <div style="grid-column:span 3"></div>
+            <div style="background:#FFF8E1;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">PM→Dev</span></div>
             <div style="grid-column:span 5"></div>
           </div>
 
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">TikTok Connect / Manual</div>
-            <div style="grid-column:span 2"></div>
-            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+          <!-- Setup môi trường — T6/W1 col4 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Setup môi trường Dev</div>
+            <div style="grid-column:span 3"></div>
+            <div style="background:#FFF8E1;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Tech</span></div>
+            <div style="grid-column:span 5"></div>
+          </div>
+
+          <!-- ── Group: Dev MVP ── -->
+          <div style="background:var(--color-navy);padding:8px 16px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">MVP Development · Sprint 1–3</span>
+          </div>
+
+          <!-- S1: Landing + Consent — T6/W2 col5 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Landing + Consent <span style="font-size:10px;font-weight:700;color:#8A6200;background:#FFF3CD;padding:1px 5px;border-radius:3px;margin-left:4px">S1</span></div>
+            <div style="grid-column:span 4"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">Dev</span></div>
             <div style="grid-column:span 4"></div>
           </div>
 
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">KOL/KOC Dashboard</div>
-            <div style="grid-column:span 3"></div>
-            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
-            <div style="grid-column:span 3"></div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Campaign Dashboard</div>
+          <!-- S1: TikTok OAuth / Fallback — T6/W2 col5 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">TikTok OAuth / Fallback <span style="font-size:10px;font-weight:700;color:#8A6200;background:#FFF3CD;padding:1px 5px;border-radius:3px;margin-left:4px">S1</span></div>
             <div style="grid-column:span 4"></div>
-            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
-            <div style="grid-column:span 2"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">Dev</span></div>
+            <div style="grid-column:span 4"></div>
           </div>
 
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Metrics Snapshot &amp; Data</div>
+          <!-- S2: View Organic Calculator — T6/W3 col6 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">View Organic Calculator <span style="font-size:10px;font-weight:700;color:#8A6200;background:#FFF3CD;padding:1px 5px;border-radius:3px;margin-left:4px">S2</span></div>
+            <div style="grid-column:span 5"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">Dev</span></div>
             <div style="grid-column:span 3"></div>
-            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 3;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#8A6200">Dev</span></div>
+          </div>
+
+          <!-- S2: KOL/KOC Dashboard — T6/W3 col6 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">KOL/KOC Dashboard <span style="font-size:10px;font-weight:700;color:#8A6200;background:#FFF3CD;padding:1px 5px;border-radius:3px;margin-left:4px">S2</span></div>
+            <div style="grid-column:span 5"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">Dev</span></div>
+            <div style="grid-column:span 3"></div>
+          </div>
+
+          <!-- S3: CPV Dashboard — T6/W4 col7 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">CPV Dashboard <span style="font-size:10px;font-weight:700;color:#8A6200;background:#FFF3CD;padding:1px 5px;border-radius:3px;margin-left:4px">S3</span></div>
+            <div style="grid-column:span 6"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">Dev</span></div>
             <div style="grid-column:span 2"></div>
           </div>
 
-          <!-- Group: Pilot -->
+          <!-- S3: Campaign Dashboard — T6/W4 col7 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Campaign Dashboard <span style="font-size:10px;font-weight:700;color:#8A6200;background:#FFF3CD;padding:1px 5px;border-radius:3px;margin-left:4px">S3</span></div>
+            <div style="grid-column:span 6"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">Dev</span></div>
+            <div style="grid-column:span 2"></div>
+          </div>
+
+          <!-- Integration Test / QA — T6/W4 col7 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Integration Test / QA</div>
+            <div style="grid-column:span 6"></div>
+            <div style="background:#FFF3CD;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#92400E">QA</span></div>
+            <div style="grid-column:span 2"></div>
+          </div>
+
+          <!-- ── Group: Pilot ── -->
           <div style="background:var(--color-navy);padding:8px 16px">
             <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">Pilot &amp; Iteration</span>
           </div>
 
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Onboard KOL/KOC pilot</div>
-            <div style="grid-column:span 6"></div>
-            <div style="background:#DCFCE7;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#166534">PM</span></div>
+          <!-- Onboard KOL/KOC Pilot — T7/W1–W2 col8 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;border-bottom:1px solid var(--color-border);align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Onboard KOL/KOC Pilot</div>
+            <div style="grid-column:span 7"></div>
+            <div style="background:#DCFCE7;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#166534">PM+Dev</span></div>
             <div style="grid-column:span 1"></div>
           </div>
 
-          <div style="display:grid;grid-template-columns:220px repeat(8,1fr);gap:0;align-items:center;min-height:44px">
-            <div style="padding:10px 16px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Pilot Report &amp; Iteration</div>
-            <div style="grid-column:span 6"></div>
-            <div style="background:#DCFCE7;height:24px;border-radius:var(--radius-sm);margin:10px 4px;grid-column:span 2;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#166534">PM+Dev</span></div>
+          <!-- Pilot Feedback & Fix — T7/W1–W2 col8 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Pilot Feedback &amp; Fix</div>
+            <div style="grid-column:span 7"></div>
+            <div style="background:#DCFCE7;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:600;color:#166534">Dev</span></div>
+            <div style="grid-column:span 1"></div>
+          </div>
+
+          <!-- ── Group: Go Live ── -->
+          <div style="background:var(--color-navy);padding:8px 16px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em">Go Live</span>
+          </div>
+
+          <!-- Go Live 14/07 — col9 -->
+          <div style="display:grid;grid-template-columns:200px repeat(9,1fr);gap:0;align-items:center;min-height:44px">
+            <div style="padding:10px 14px;font-size:13px;font-weight:500;color:var(--color-text-primary);border-right:1px solid var(--color-border)">Go Live 🚀</div>
+            <div style="grid-column:span 8"></div>
+            <div style="background:#22C55E;height:24px;border-radius:var(--radius-sm);margin:10px 3px;grid-column:span 1;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">14/07</span></div>
           </div>
 
         </div><!-- end gantt table -->
@@ -1572,16 +1677,24 @@
         <!-- Legend -->
         <div style="display:flex;gap:var(--space-5);margin-top:var(--space-4);flex-wrap:wrap">
           <div style="display:flex;align-items:center;gap:var(--space-2)">
-            <div style="width:28px;height:12px;background:#EFF3FF;border-radius:3px"></div>
+            <div style="width:28px;height:12px;background:#EFF3FF;border-radius:3px;border:1px solid #C7D2F0"></div>
             <span style="font-size:12px;color:var(--color-text-secondary)">Discovery / Planning</span>
           </div>
           <div style="display:flex;align-items:center;gap:var(--space-2)">
+            <div style="width:28px;height:12px;background:#FFF8E1;border-radius:3px;border:1px solid #FFE082"></div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">Bàn giao</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2)">
             <div style="width:28px;height:12px;background:#FFF3CD;border-radius:3px"></div>
-            <span style="font-size:12px;color:var(--color-text-secondary)">Development</span>
+            <span style="font-size:12px;color:var(--color-text-secondary)">Development (S1–S3)</span>
           </div>
           <div style="display:flex;align-items:center;gap:var(--space-2)">
             <div style="width:28px;height:12px;background:#DCFCE7;border-radius:3px"></div>
             <span style="font-size:12px;color:var(--color-text-secondary)">Pilot &amp; Iteration</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2)">
+            <div style="width:28px;height:12px;background:#22C55E;border-radius:3px"></div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">Go Live · 14/07</span>
           </div>
         </div>
 
@@ -1594,7 +1707,7 @@
 <footer>
   <div class="container">
     <p class="footer-text">
-      <span>TikTok KOL/KOC Tracking Platform</span> &nbsp;·&nbsp; Product Plan v1.0 &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Dành cho review nội bộ PM / PO / BA
+      <span>YO.Creator Platform</span> &nbsp;·&nbsp; SRS v5.0 · 2026-06-04 &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Dành cho Senior Developer, Product Owner · Go Live 14/07/2026
     </p>
   </div>
 </footer>
