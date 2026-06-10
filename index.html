@@ -539,6 +539,7 @@
     <a class="nav-link" href="#summary">Tổng quan</a>
     <a class="nav-link" href="#users">Người dùng</a>
     <a class="nav-link" href="#scope">Phạm vi MVP</a>
+    <a class="nav-link" href="#teamflow">Team Workflow</a>
     <a class="nav-link" href="#flow">Luồng</a>
     <a class="nav-link" href="#data">Dữ liệu</a>
     <a class="nav-link" href="#kpi">KPIs</a>
@@ -745,11 +746,71 @@
   </div>
 </section>
 
-<!-- 04 LUỒNG -->
-<section id="flow">
+<!-- 04 TEAM WORKFLOW -->
+<section id="teamflow">
   <div class="container">
     <div class="section-header">
       <div class="section-tag">04</div>
+      <h2>Team Workflow</h2>
+      <p>Sơ đồ phân tầng trách nhiệm và luồng làm việc giữa các thành viên</p>
+    </div>
+    <div class="card" style="padding:var(--space-6);overflow-x:auto">
+      <svg width="100%" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg" style="display:block;min-width:520px">
+        <defs>
+          <marker id="tw-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <rect x="24" y="24" width="210" height="260" rx="10" fill="none" stroke="#E24B4A" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.65"/>
+        <text x="34" y="42" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600" fill="#E24B4A">TẦNG KIẾN TRÚC &amp; BẢO MẬT</text>
+        <rect x="44" y="56" width="170" height="56" rx="8" fill="#FCEBEB" stroke="#E24B4A" stroke-width="0.5"/>
+        <text x="129" y="79" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#791F1F">Quốc Anh</text>
+        <text x="129" y="97" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#A32D2D">Solution Architect</text>
+        <rect x="44" y="196" width="170" height="56" rx="8" fill="#FCEBEB" stroke="#E24B4A" stroke-width="0.5"/>
+        <text x="129" y="219" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#791F1F">Quốc Anh</text>
+        <text x="129" y="237" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#A32D2D">DevSecOps · Hạ tầng</text>
+        <rect x="254" y="24" width="210" height="120" rx="10" fill="none" stroke="#1D9E75" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.65"/>
+        <text x="264" y="42" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600" fill="#1D9E75">TẦNG PHÁT TRIỂN CORE</text>
+        <rect x="294" y="56" width="140" height="44" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+        <text x="364" y="83" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#0C447C">Huy.Partner</text>
+        <rect x="254" y="164" width="402" height="130" rx="10" fill="none" stroke="#BA7517" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.65"/>
+        <text x="264" y="182" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600" fill="#BA7517">TẦNG VẬN HÀNH &amp; BRIDGE</text>
+        <rect x="270" y="196" width="170" height="56" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+        <text x="355" y="219" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#633806">Công Văn</text>
+        <text x="355" y="237" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#854F0B">IT Support · Bridge</text>
+        <rect x="470" y="196" width="166" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+        <text x="553" y="219" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#26215C">Marketing</text>
+        <text x="553" y="237" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#3C3489">Campaign Owner</text>
+        <path d="M214 78 L292 78" fill="none" stroke="#6B7280" stroke-width="0.8" marker-end="url(#tw-arrow)" opacity="0.6"/>
+        <text x="252" y="71" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280" opacity="0.85">Thiết kế kiến trúc</text>
+        <path d="M214 218 L268 218" fill="none" stroke="#6B7280" stroke-width="0.8" marker-end="url(#tw-arrow)" opacity="0.6"/>
+        <text x="240" y="211" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280" opacity="0.85">Setup hạ tầng</text>
+        <path d="M364 100 L364 150 L355 150 L355 194" fill="none" stroke="#6B7280" stroke-width="0.8" marker-end="url(#tw-arrow)" opacity="0.6"/>
+        <text x="384" y="140" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280" opacity="0.85">Xuất Insight/Seg.</text>
+        <path d="M440 224 L468 224" fill="none" stroke="#6B7280" stroke-width="0.8" marker-end="url(#tw-arrow)" opacity="0.6"/>
+        <text x="454" y="217" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280" opacity="0.85">Công cụ</text>
+        <path d="M553 252 L553 330 L355 330 L355 254" fill="none" stroke="#6B7280" stroke-width="0.8" marker-end="url(#tw-arrow)" opacity="0.5"/>
+        <text x="454" y="344" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280" opacity="0.75">Feedback &amp; Nhu cầu thực tế</text>
+        <path d="M355 194 L355 150 L364 150 L364 102" fill="none" stroke="#6B7280" stroke-width="0.8" marker-end="url(#tw-arrow)" opacity="0.5"/>
+        <text x="316" y="140" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#6B7280" opacity="0.75">Báo lỗi/Yêu cầu</text>
+        <path d="M292 64 L216 64" fill="none" stroke="#E24B4A" stroke-width="0.8" stroke-dasharray="5 3" marker-end="url(#tw-arrow)" opacity="0.8"/>
+        <text x="253" y="57" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#E24B4A" opacity="0.9">Esc. kiến trúc</text>
+        <path d="M270 228 L216 228" fill="none" stroke="#E24B4A" stroke-width="0.8" stroke-dasharray="5 3" marker-end="url(#tw-arrow)" opacity="0.8"/>
+        <text x="242" y="221" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#E24B4A" opacity="0.9">Esc. hạ tầng</text>
+        <line x1="40" y1="400" x2="76" y2="400" stroke="#6B7280" stroke-width="1.2" marker-end="url(#tw-arrow)" opacity="0.6"/>
+        <text x="84" y="404" font-family="Inter,Arial,sans-serif" font-size="11" fill="#6B7280">Luồng xuôi</text>
+        <line x1="200" y1="400" x2="236" y2="400" stroke="#E24B4A" stroke-width="1.2" stroke-dasharray="5 3" marker-end="url(#tw-arrow)" opacity="0.85"/>
+        <text x="244" y="404" font-family="Inter,Arial,sans-serif" font-size="11" fill="#E24B4A">Escalation</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 05 LUỒNG -->
+<section id="flow">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">05</div>
       <h2>Luồng sản phẩm</h2>
       <p>KOC onboarding và Account/Campaign Team workflow</p>
     </div>
@@ -942,11 +1003,11 @@
   </div>
 </section>
 
-<!-- 05 DỮ LIỆU -->
+<!-- 06 DỮ LIỆU -->
 <section id="data">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">05</div>
+      <div class="section-tag">06</div>
       <h2>Kiến trúc dữ liệu</h2>
       <p>Entity chính và các trường dữ liệu đề xuất</p>
     </div>
@@ -1015,7 +1076,7 @@
 <section id="kpi">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">06</div>
+      <div class="section-tag">07</div>
       <h2>Success Metrics</h2>
       <p>KPIs và targets cho MVP</p>
     </div>
@@ -1058,7 +1119,7 @@
 <section id="ice">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">07</div>
+      <div class="section-tag">08</div>
       <h2>Prioritization — ICE Score</h2>
       <p>Impact × Confidence × Ease</p>
     </div>
@@ -1139,7 +1200,7 @@
 <section id="roadmap">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">08</div>
+      <div class="section-tag">09</div>
       <h2>Roadmap</h2>
       <p>4 phases từ Discovery đến Intelligence &amp; Scaling</p>
     </div>
@@ -1221,7 +1282,7 @@
 <section id="risk">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">09</div>
+      <div class="section-tag">10</div>
       <h2>Risk Register</h2>
       <p>Rủi ro đã xác định và hướng xử lý</p>
     </div>
@@ -1289,7 +1350,7 @@
 <section id="stories">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">10</div>
+      <div class="section-tag">11</div>
       <h2>User Stories</h2>
       <p>Acceptance criteria cho 2 nhóm người dùng chính</p>
     </div>
@@ -1393,7 +1454,7 @@
 <section id="nextsteps">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">11</div>
+      <div class="section-tag">12</div>
       <h2>Next Steps — Action Plan</h2>
       <p>Timeline 9 tuần từ Discovery đến Go Live · 12/05 – 14/07/2026</p>
     </div>
@@ -1479,7 +1540,7 @@
 <section id="gantt">
   <div class="container">
     <div class="section-header">
-      <div class="section-tag">12</div>
+      <div class="section-tag">13</div>
       <h2>Gantt Chart</h2>
       <p>Timeline 9 tuần · Dev bắt đầu T6/W2 (09/06) · Go Live 14/07/2026</p>
     </div>
